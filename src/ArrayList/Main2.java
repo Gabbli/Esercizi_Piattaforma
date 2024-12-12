@@ -1,6 +1,8 @@
 package ArrayList;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 
 /*
@@ -12,28 +14,34 @@ Mettere in ordine la collezione e stampare il risultato
 public class Main2 {
     public static void main(String[] args) {
 
-        ArrayList<Student2> nomi = new ArrayList<>();
+        ArrayList<Student2> students = new ArrayList<>();
 
-        nomi.add(new Student2("Gabriele", 23));
-        nomi.add(new Student2("Fabio", 20));
-        nomi.add(new Student2("Aurora", 25));
-        nomi.add(new Student2("Carla", 23));
-        nomi.add(new Student2("Carolina", 21));
-        nomi.add(new Student2("Antonino", 26));
-        nomi.add(new Student2("Bob", 20));
-        nomi.add(new Student2("Salvo", 23));
-        nomi.add(new Student2("Mattia", 24));
-        nomi.add(new Student2("Salvatore", 24));
-        nomi.add(new Student2("Matteo", 23));
-        nomi.add(new Student2("Gaspare", 22));
+        students.add(new Student2("Gabriele", 23));
+        students.add(new Student2("Fabio", 20));
+        students.add(new Student2("Aurora", 25));
+        students.add(new Student2("Carla", 23));
+        students.add(new Student2("Carolina", 21));
+        students.add(new Student2("Antonino", 26));
+        students.add(new Student2("Bob", 20));
+        students.add(new Student2("Salvo", 23));
+        students.add(new Student2("Mattia", 24));
+        students.add(new Student2("Salvatore", 24));
+        students.add(new Student2("Matteo", 23));
+        students.add(new Student2("Gaspare", 22));
 
-        for (Student2 persone : nomi) {
+        for (Student2 persone : students) {
             System.out.println("Questi sono i studenti: " + persone);
         }
 
         System.out.println();
 
-        //Collections.sort(nomi)
+        // Ordinare la lista in base all'età
+        Collections.sort(students);
 
+        // Stampa dopo L'ordinamento
+        System.out.println("\nStudenti dopo l'ordinamento:");
+        for (Student2 student : students) {
+            System.out.println(student);
+        }
     }
 }
